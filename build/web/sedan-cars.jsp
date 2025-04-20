@@ -6,225 +6,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sedan Cars - CarRent</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        :root {
-            --bg-color: #fff;
-            --text-color: #333;
-            --header-bg: #1a1a1a;
-            --header-text: #fff;
-            --card-bg: #f4f4f4;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        header {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            padding: 1rem 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--header-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #ffd700;
-        }
-
-        .page-title {
-            text-align: center;
-            padding: 2rem 0;
-            font-size: 2.5rem;
-        }
-
         .car-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            padding-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .car-card {
             background-color: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 0.75rem;
+            border: 1px solid var(--card-border);
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
         }
 
         .car-card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
         }
 
         .car-image {
             height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .car-image-bg {
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .car-card:hover .car-image-bg {
+            transform: scale(1.1);
+        }
+
+        .car-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, 
+                rgba(236, 72, 153, 0.2), 
+                transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        [data-theme="dark"] .car-image-overlay {
+            background: linear-gradient(to top, 
+                rgba(126, 34, 206, 0.4), 
+                transparent);
+        }
+
+        .car-card:hover .car-image-overlay {
+            opacity: 1;
         }
 
         .car-info {
-            padding: 1rem;
+            padding: 1.5rem;
         }
 
         .car-info h3 {
             margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .car-card:hover .car-info h3 {
+            color: var(--primary-color);
         }
 
         .car-info p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .car-price {
+            font-weight: 600;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
         .btn {
             display: inline-block;
-            background-color: #ffd700;
-            color: #1a1a1a;
-            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 0.375rem;
             transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
         }
 
         .btn:hover {
-            background-color: #e6c200;
-        }
-
-        footer {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            text-align: center;
-            padding: 1rem 0;
+            background-color: var(--primary-hover);
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">CarRent</div>
-            <ul class="nav-links">
-                <li><a href="index.jsp">Home</a></li>
-                <li><a href="sports-cars.jsp">Sports Cars</a></li>
-                <li><a href="sedan-cars.jsp">Sedan Cars</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="contact.jsp">Contact</a></li>
-                <%
-                    if (session.getAttribute("userEmail") != null) {
-                %>
-                    <li><a href="profile.jsp">Profile</a></li>
-                    <li><a href="logout">Logout</a></li>
-                <%
-                    } else {
-                %>
-                    <li><a href="LoginForm.jsp">Login</a></li>
-                <%
-                    }
-                %>
-            </ul>
-        </nav>
-    </header>
+    <jsp:include page="header.jsp" />
 
     <main class="container">
         <h1 class="page-title">Our Luxury Sedans</h1>
         <div class="car-grid">
             <div class="car-card">
-                <div class="car-image" style="background-image: url('https://source.unsplash.com/500x300/?car,mercedes');"></div>
+                <div class="car-image">
+                    <div class="car-image-bg" style="background-image: url('Mercedes-Benz S-Class.jpg');"></div>
+                    <div class="car-image-overlay"></div>
+                </div>
                 <div class="car-info">
                     <h3>Mercedes-Benz S-Class</h3>
                     <p>Experience ultimate luxury and comfort</p>
-                    <p><strong>Price:</strong> $300/day</p>
+                    <div class="car-price">₹5000/day</div>
                     <a href="#" class="btn">Rent Now</a>
                 </div>
             </div>
             <div class="car-card">
-                <div class="car-image" style="background-image: url('https://source.unsplash.com/500x300/?car,bmw');"></div>
+                <div class="car-image">
+                    <div class="car-image-bg" style="background-image: url('BMW 7 series.jpeg');"></div>
+                    <div class="car-image-overlay"></div>
+                </div>
                 <div class="car-info">
                     <h3>BMW 7 Series</h3>
                     <p>Cutting-edge technology meets elegance</p>
-                    <p><strong>Price:</strong> $280/day</p>
+                    <div class="car-price">₹5000/day</div>
                     <a href="#" class="btn">Rent Now</a>
                 </div>
             </div>
             <div class="car-card">
-                <div class="car-image" style="background-image: url('https://source.unsplash.com/500x300/?car,audi');"></div>
+                <div class="car-image">
+                    <div class="car-image-bg" style="background-image: url('Audi A8.jpeg');"></div>
+                    <div class="car-image-overlay"></div>
+                </div>
                 <div class="car-info">
                     <h3>Audi A8</h3>
                     <p>Sophisticated design with advanced features</p>
-                    <p><strong>Price:</strong> $270/day</p>
+                    <div class="car-price">₹5000/day</div>
                     <a href="#" class="btn">Rent Now</a>
                 </div>
             </div>
             <div class="car-card">
-                <div class="car-image" style="background-image: url('https://source.unsplash.com/500x300/?car,lexus');"></div>
+                <div class="car-image">
+                    <div class="car-image-bg" style="background-image: url('Lexus LS.jpeg');"></div>
+                    <div class="car-image-overlay"></div>
+                </div>
                 <div class="car-info">
                     <h3>Lexus LS</h3>
                     <p>Japanese luxury with exceptional craftsmanship</p>
-                    <p><strong>Price:</strong> $260/day</p>
+                    <div class="car-price">₹5000/day</div>
                     <a href="#" class="btn">Rent Now</a>
                 </div>
             </div>
             <div class="car-card">
-                <div class="car-image" style="background-image: url('https://source.unsplash.com/500x300/?car,jaguar');"></div>
-                <div class="car-info">
-                    <h3>Jaguar XJ</h3>
-                    <p>British elegance with powerful performance</p>
-                    <p><strong>Price:</strong> $250/day</p>
-                    <a href="#" class="btn">Rent Now</a>
+                <div class="car-image">
+                    <div class="car-image-bg" style="background-image: url('Genesis g90.jpeg');"></div>
+                    <div class="car-image-overlay"></div>
                 </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image" style="background-image: url('https://source.unsplash.com/500x300/?car,genesis');"></div>
                 <div class="car-info">
                     <h3>Genesis G90</h3>
                     <p>Korean luxury redefined</p>
-                    <p><strong>Price:</strong> $240/day</p>
+                    <div class="car-price">₹5000/day</div>
+                    <a href="#" class="btn">Rent Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+            <div class="car-image">
+                <div class="car-image-bg" style="background-image: url('Jaguar XJ.jpeg');"></div>
+                <div class="car-image-overlay"></div>
+            </div>
+                <div class="car-info">
+                    <h3>Jaguar XJ</h3>
+                    <p>British elegance with powerful performance</p>
+                    <div class="car-price">₹5000/day</div>
                     <a href="#" class="btn">Rent Now</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 CarRent. All rights reserved.</p>
-        </div>
-    </footer>
+    <jsp:include page="footer.jsp" />
 </body>
 </html>

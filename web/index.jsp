@@ -7,116 +7,7 @@
     <title>CarRent - Your Premium Car Rental Service</title>
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        :root {
-            --bg-color: #fff;
-            --text-color: #333;
-            --header-bg: #1a1a1a;
-            --header-text: #fff;
-            --card-bg: #f4f4f4;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        header {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            padding: 1rem 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--header-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #ffd700;
-        }
-
-        .hero {
-            position: relative;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            overflow: hidden;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .hero-content {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #1a1a1a;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #e6c200;
-        }
-
+        
         .featured-cars {
             padding: 4rem 0;
         }
@@ -158,52 +49,54 @@
             margin-bottom: 0.5rem;
         }
 
-        footer {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            text-align: center;
-            padding: 1rem 0;
-        }
+        .hero {
+    position: relative;
+    height: 60vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: 1;
+}
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">CarRent</div>
-            <ul class="nav-links">
-                <li><a href="index.jsp">Home</a></li>
-                <li><a href="#cars">Cars</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="contact.jsp">Contact</a></li>
-                <%
-                    if (session.getAttribute("userEmail") != null) {
-                %>
-                    <li><a href="profile.jsp">Profile</a></li>
-                    <li><a href="logout">Logout</a></li>
-                <%
-                    } else {
-                %>
-                    <li><a href="LoginForm.jsp">Login</a></li>
-                <%
-                    }
-                %>
-            </ul>
-        </nav>
-    </header>
-
+    <jsp:include page="header.jsp" />
     <main>
         <section class="hero" id="home">
-            <video autoplay muted loop class="hero-video">
-                <source src="Ferrari.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-content">
-                <h1>Drive Your Dreams</h1>
-                <p>Experience luxury and comfort with our premium car rental service</p>
-                <a href="#cars" class="btn">Explore Cars</a>
-            </div>
-        </section>
+    <div class="hero">
+    <video autoplay muted loop>
+        <source src="Ferrari.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+        <h1>Drive Your Dreams</h1>
+        <p>Experience luxury and comfort with our premium car rental service</p>
+        <a href="Carlist.jsp" class="btn">Explore Cars</a>
+    </div>
+</div>
 
+</section>
         <section class="featured-cars container" id="cars">
             <h2>Featured Cars</h2>
             <div class="car-grid">
@@ -235,10 +128,6 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 CarRent. All rights reserved.</p>
-        </div>
-    </footer>
+    <jsp:include page="footer.jsp" />
 </body>
 </html>

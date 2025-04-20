@@ -6,171 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - CarRent</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        :root {
-            --bg-color: #fff;
-            --text-color: #333;
-            --header-bg: #1a1a1a;
-            --header-text: #fff;
-            --card-bg: #f4f4f4;
-            --input-bg: #fff;
-            --input-border: #ccc;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        header {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            padding: 1rem 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--header-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #ffd700;
-        }
-
+        
         .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    width: 100%;
+}
 
-        .contact-form h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
+.contact-form h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
+.form-group {
+    margin-bottom: 1rem;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid var(--input-border);
-            border-radius: 5px;
-            background-color: var(--input-bg);
-            color: var(--text-color);
-        }
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
 
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+    outline: none;
+}
 
-        .btn {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #1a1a1a;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
-        }
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .btn:hover {
-            background-color: #e6c200;
-        }
+button[type="submit"]:hover {
+    background-color: #be185d;
+}
+/* Contact Info */
+.contact-info {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    width: 100%;
+    color: var(--text-color);
+    line-height: 1.6;
+}
 
-        .contact-info {
-            margin-top: 2rem;
-            text-align: center;
-        }
+.contact-info h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--primary-color);
+}
 
-        footer {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            text-align: center;
-            padding: 1rem 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
+.contact-info p {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+}
+
+.contact-info p svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">CarRent</div>
-            <ul class="nav-links">
-                <li><a href="index.jsp">Home</a></li>
-                <li><a href="sports-cars.jsp">Sports Cars</a></li>
-                <li><a href="sedan-cars.jsp">Sedan Cars</a></li>
-                <li><a href="suv-cars.jsp">SUV Cars</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="contact.jsp">Contact</a></li>
-                <%
-                    if (session.getAttribute("userEmail") != null) {
-                %>
-                    <li><a href="profile.jsp">Profile</a></li>
-                    <li><a href="logout">Logout</a></li>
-                <%
-                    } else {
-                %>
-                    <li><a href="LoginForm.jsp">Login</a></li>
-                <%
-                    }
-                %>
-            </ul>
-        </nav>
-    </header>
-
+    
+    <jsp:include page="header.jsp"/>
     <main class="container">
         <form class="contact-form" action="contact" method="post">
             <h2>Contact Us</h2>
@@ -192,18 +126,31 @@
             </div>
             <button type="submit" class="btn">Send Message</button>
         </form>
-        <div class="contact-info">
-            <h3>Our Contact Information</h3>
-            <p>Email: info@carrent.com</p>
-            <p>Phone: +1 (555) 123-4567</p>
-            <p>Address: 123 Car Street, Auto City, AC 12345</p>
-        </div>
+       <div class="contact-info">
+    <h3>Our Contact Information</h3>
+    <p>
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M4 4h16v16H4z" fill="none" />
+            <path d="M4 4l8 8 8-8" stroke="currentColor" stroke-width="2" fill="none" />
+        </svg>
+        Email: <a href="mailto:info@carrent.com" style="color: var(--primary-color); text-decoration: none;">amandiv2345@gmail.com</a>
+    </p>
+    <p>
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M3 5h2l3 7-1.5 2.5c.5.5 1 1 1.5 1.5l2.5-1.5 7 3v2a1 1 0 0 1-1 1A17 17 0 0 1 3 5z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Phone: +91 7061545199
+    </p>
+    <p>
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2C8 2 5 5 5 9c0 7 7 13 7 13s7-6 7-13c0-4-3-7-7-7z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Address: CSWT BSF Camp Indore
+    </p>
+</div>
+
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 CarRent. All rights reserved.</p>
-        </div>
-    </footer>
+    <jsp:include page="footer.jsp"/>
 </body>
 </html>

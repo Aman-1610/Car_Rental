@@ -5,23 +5,29 @@
         <group>
             <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/ContactServlet.java</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/BookingConfirmation.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/Car.java</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/PaymentPage.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/BookingForm.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/sedan-cars.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/contact.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/DeliveryServlet.java</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/LoginForm.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/VerificationServlet.java</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/VerificationPage.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/CarDisplayServlet.java</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/PaymentServlet.java</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/profile.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/BookingServlet.java</file>
             <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/sports-cars.jsp</file>
             <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/index.jsp</file>
             <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/RegForm.jsp</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/sedan-cars.jsp</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/contact.jsp</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/LoginServlet.java</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/LogoutServlet.java</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/RegisterServlet.java</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/payment.jsp</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/LoginForm.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/header.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/footer.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/DeliveryForm.jsp</file>
             <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/suv-cars.jsp</file>
+            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/carlist.jsp</file>
             <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/about.jsp</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/ConfirmPaymentServlet.java</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/profile.jsp</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/booking-confirmation.jsp</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/src/java/com/carrental/BookingServlet.java</file>
-            <file>file:/C:/Users/amand/OneDrive/Documents/NetBeansProjects/Car_Rental/web/booking.jsp</file>
         </group>
     </open-files>
 </project-private>
