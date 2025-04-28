@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.carrental.Car" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,78 +118,35 @@
     <main class="container">
         <h1 class="page-title">Our Family SUVs</h1>
         <div class="car-grid">
+
+        <%
+            List<Car> carList = (List<Car>) request.getAttribute("carList");
+            if (carList != null) {
+                for (Car car : carList) {
+                    if ("SUV".equalsIgnoreCase(car.getCategory())) {
+        %>
             <div class="car-card">
                 <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('BMW X5.jpg');"></div>
+                    <div class="car-image-bg" style="background-image: url('<%= car.getImageUrl() %>');"></div>
                     <div class="car-image-overlay"></div>
                 </div>
                 <div class="car-info">
-                    <h3>BMW X5</h3>
-                    <p>Luxury and performance in a family-sized package</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
+                    <h3><%= car.getMake() %> <%= car.getModel() %></h3>
+                    <p><%= car.getDescription() %></p>
+                    <div class="car-price">₹<%= car.getDailyRate() %>/day</div>
+                    <a href="book?carId=<%= car.getId() %>" class="btn">Rent Now</a>
                 </div>
             </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Audi Q7.jpg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Audi Q7</h3>
-                    <p>Spacious and sophisticated family SUV</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Mercedes Benz GLE.jpg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Mercedes-Benz GLE</h3>
-                    <p>Comfort and style for the whole family</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Volvo XC90.jpg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Volvo XC90</h3>
-                    <p>Safety and luxury combined</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Range Rover Sports.jpeg');"></div>
-                   <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Range Rover Sport</h3>
-                    <p>Luxury on and off the road</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Porsche Cayenne GT.jpg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Porsche Cayenne</h3>
-                    <p>Sports car performance in an SUV</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
+        <%
+                    }
+                }
+            } else {
+        %>
+            <p>No SUV cars available right now.</p>
+        <%
+            }
+        %>
+
         </div>
     </main>
 

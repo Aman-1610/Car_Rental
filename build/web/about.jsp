@@ -248,7 +248,7 @@
     <main class="container">
         <div class="about-content">
             <h2>About CarRent</h2>
-            <p>CarRent is a premium car rental service dedicated to providing our customers with the best driving experience possible. Founded in 2010, we have grown to become one of the leading car rental companies in the country.</p>
+            <p>CarRent is a premium car rental service dedicated to providing our customers with the best driving experience possible. Founded in 2025, we have grown to become one of the leading car rental companies in the country.</p>
             <p>Our mission is to make renting a car as easy and enjoyable as possible. We offer a wide range of vehicles, from economy cars to luxury sports cars, ensuring that we have the perfect vehicle for every occasion and budget.</p>
             <p>At CarRent, we pride ourselves on our commitment to customer satisfaction, top-notch vehicle maintenance, and competitive pricing. Our team of dedicated professionals works tirelessly to ensure that every aspect of your rental experience exceeds your expectations.</p>
             
@@ -258,13 +258,14 @@
                    <div class="team-member">
     <div class="card-inner">
         <div class="card-front">
-            <img src="NEW.jpg" alt="Aman Kumar">
-            <h4>Aman Kumar</h4>
-            <p>CEO</p>
+            <img src="Alok.png" alt="Alok Kumar">
+            <h4>Alok Kumar</h4>
+            <b><strong><p>CEO</p></strong></b>
+            <p>22100BTCSE11398</p>
         </div>
         <div class="card-back">
-            <h4>Aman Kumar</h4>
-            <p>Backend Developer.</p>
+            <h4>Alok Kumar</h4>
+            <p>Frontend Developer.</p>
         </div>
     </div>
 </div>
@@ -272,12 +273,13 @@
 <div class="team-member">
     <div class="card-inner">
         <div class="card-front">
-            <img src="https://source.unsplash.com/150x150/?portrait,woman" alt="Alok Kumar">
-            <h4>Alok Kumar</h4>
-            <p>CEO</p>
+            <img src="Ansh.png" alt="Ansh jaiswal">
+            <h4>Ansh Jaiswal</h4>
+            <b><strong><p>Investor</p></strong></b>
+            <p>22100BTCSE11416</p>
         </div>
         <div class="card-back">
-            <h4>Alok Kumar</h4>
+            <h4>Ansh Jaiswal</h4>
             <p>Frontend Developer.</p>
         </div>
     </div>
@@ -286,17 +288,31 @@
  <div class="team-member">
     <div class="card-inner">
         <div class="card-front">
-            <img src="https://source.unsplash.com/150x150/?portrait,person" alt="Ansh Jaiswal">
-            <h4>Ansh Jaiswal</h4>
-            <p>COO</p>
+            <img src="Sharma.png" alt="Aditya sharma">
+            <h4>Aditya Sharma</h4>
+            <b><strong><p>Supervisor</p></strong></b>
+            <p>22100BTCSE11367</p>
         </div>
         <div class="card-back">
-            <h4>Ansh Jaiswal</h4>
-            <p>Frontend Developer.</p>
+            <h4>Aditya Sharma</h4>
+            <p>Backend Developer.</p>
         </div>
     </div>
 </div>
-
+<div class="team-member">
+    <div class="card-inner">
+        <div class="card-front">
+            <img src="Tomar.png" alt="Aman Tomar">
+            <h4>Aman Tomar</h4>
+            <b><strong><p>Technician</p></strong></b>
+            <p>22100BTCSE11404</p>
+        </div>
+        <div class="card-back">
+            <h4>Aman Tomar</h4>
+            <p>Backend Developer.</p>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </div>

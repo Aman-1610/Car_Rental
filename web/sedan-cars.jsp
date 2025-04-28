@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.carrental.Car" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,83 +113,40 @@
     </style>
 </head>
 <body>
-    <jsp:include page="header.jsp" />
+     <jsp:include page="header.jsp" />
 
     <main class="container">
         <h1 class="page-title">Our Luxury Sedans</h1>
         <div class="car-grid">
+
+        <%
+            List<Car> carList = (List<Car>) request.getAttribute("carList");
+            if (carList != null) {
+                for (Car car : carList) {
+                    if ("Sedan".equalsIgnoreCase(car.getCategory())) {
+        %>
             <div class="car-card">
                 <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Mercedes-Benz S-Class.jpg');"></div>
+                    <div class="car-image-bg" style="background-image: url('<%= car.getImageUrl() %>');"></div>
                     <div class="car-image-overlay"></div>
                 </div>
                 <div class="car-info">
-                    <h3>Mercedes-Benz S-Class</h3>
-                    <p>Experience ultimate luxury and comfort</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
+                    <h3><%= car.getMake() %> <%= car.getModel() %></h3>
+                    <p><%= car.getDescription() %></p>
+                    <div class="car-price">₹<%= car.getDailyRate() %>/day</div>
+                    <a href="book?carId=<%= car.getId() %>" class="btn">Rent Now</a>
                 </div>
             </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('BMW 7 series.jpeg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>BMW 7 Series</h3>
-                    <p>Cutting-edge technology meets elegance</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Audi A8.jpeg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Audi A8</h3>
-                    <p>Sophisticated design with advanced features</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Lexus LS.jpeg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Lexus LS</h3>
-                    <p>Japanese luxury with exceptional craftsmanship</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-                <div class="car-image">
-                    <div class="car-image-bg" style="background-image: url('Genesis g90.jpeg');"></div>
-                    <div class="car-image-overlay"></div>
-                </div>
-                <div class="car-info">
-                    <h3>Genesis G90</h3>
-                    <p>Korean luxury redefined</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
-            <div class="car-card">
-            <div class="car-image">
-                <div class="car-image-bg" style="background-image: url('Jaguar XJ.jpeg');"></div>
-                <div class="car-image-overlay"></div>
-            </div>
-                <div class="car-info">
-                    <h3>Jaguar XJ</h3>
-                    <p>British elegance with powerful performance</p>
-                    <div class="car-price">₹5000/day</div>
-                    <a href="#" class="btn">Rent Now</a>
-                </div>
-            </div>
+        <%
+                    }
+                }
+            } else {
+        %>
+            <p>No sedan cars available right now.</p>
+        <%
+            }
+        %>
+
         </div>
     </main>
 

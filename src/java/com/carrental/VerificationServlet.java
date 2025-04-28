@@ -30,7 +30,8 @@ public class VerificationServlet extends HttpServlet {
         
         // In a real application, you would probably have an admin panel to verify documents
         // For demonstration purposes, we'll simulate verification with a form
-        request.getRequestDispatcher("verification.jsp").forward(request, response);
+        request.getRequestDispatcher("VerificationPage.jsp").forward(request, response);
+
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 

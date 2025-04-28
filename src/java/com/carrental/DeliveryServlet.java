@@ -32,7 +32,7 @@ public class DeliveryServlet extends HttpServlet {
         }
         
         request.setAttribute("bookingId", bookingIdParam);
-        request.getRequestDispatcher("deliveryForm.jsp").forward(request, response);
+        request.getRequestDispatcher("DeliveryForm.jsp").forward(request, response);
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -83,7 +83,7 @@ public class DeliveryServlet extends HttpServlet {
                         session.removeAttribute("totalAmount");
                         
                         // Redirect to confirmation page
-                        response.sendRedirect("bookingConfirmation.jsp?bookingId=" + bookingId);
+                        response.sendRedirect("BookingConfirmation.jsp?bookingId=" + bookingId);
                     } else {
                         response.sendRedirect("delivery?bookingId=" + bookingId + "&error=failed");
                     }

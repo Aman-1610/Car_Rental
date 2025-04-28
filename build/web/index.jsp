@@ -92,7 +92,7 @@
     <div class="hero-content">
         <h1>Drive Your Dreams</h1>
         <p>Experience luxury and comfort with our premium car rental service</p>
-        <a href="Carlist.jsp" class="btn">Explore Cars</a>
+        <a href="sports-cars" class="btn">Explore Cars</a>
     </div>
 </div>
 
@@ -105,7 +105,7 @@
                     <div class="car-info">
                         <h3>Sports Car</h3>
                         <p>Experience the thrill of speed</p>
-                        <a href="sports-cars.jsp" class="btn">Rent Now</a>
+                        <a href="sports-cars" class="btn">Rent Now</a>
                     </div>
                 </div>
                 <div class="car-card">
@@ -113,7 +113,7 @@
                     <div class="car-info">
                         <h3>Luxury Sedan</h3>
                         <p>Travel in style and comfort</p>
-                        <a href="sedan-cars.jsp" class="btn">Rent Now</a>
+                        <a href="sedan-cars" class="btn">Rent Sedan</a>
                     </div>
                 </div>
                 <div class="car-card">
@@ -121,7 +121,7 @@
                     <div class="car-info">
                         <h3>Family SUV</h3>
                         <p>Perfect for family trips</p>
-                        <a href="suv-cars.jsp" class="btn">Rent Now</a>
+                        <a href="suv-cars" class="btn">Rent Now</a>
                     </div>
                 </div>
             </div>

@@ -188,7 +188,7 @@
 </div>
             <ul class="nav-links">
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="sports-cars.jsp">Cars</a></li>
+                <li><a href="sports-cars">Cars</a></li>
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
                 <%

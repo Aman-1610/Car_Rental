@@ -36,7 +36,7 @@ public class PaymentServlet extends HttpServlet {
         request.setAttribute("amount", totalAmount);
         
         // Forward to payment page
-        request.getRequestDispatcher("payment.jsp").forward(request, response);
+        request.getRequestDispatcher("PaymentPage.jsp").forward(request, response);
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 

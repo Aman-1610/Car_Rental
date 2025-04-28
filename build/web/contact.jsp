@@ -133,13 +133,13 @@ button[type="submit"]:hover {
             <path d="M4 4h16v16H4z" fill="none" />
             <path d="M4 4l8 8 8-8" stroke="currentColor" stroke-width="2" fill="none" />
         </svg>
-        Email: <a href="mailto:info@carrent.com" style="color: var(--primary-color); text-decoration: none;">amandiv2345@gmail.com</a>
+        Email: <a href="mailto:info@carrent.com" style="color: var(--primary-color); text-decoration: none;">alokkumar20041610@gmail.com</a>
     </p>
     <p>
         <svg class="icon" viewBox="0 0 24 24">
             <path d="M3 5h2l3 7-1.5 2.5c.5.5 1 1 1.5 1.5l2.5-1.5 7 3v2a1 1 0 0 1-1 1A17 17 0 0 1 3 5z" fill="none" stroke="currentColor" stroke-width="2"/>
         </svg>
-        Phone: +91 7061545199
+        Phone: +91 9098688074
     </p>
     <p>
         <svg class="icon" viewBox="0 0 24 24">
