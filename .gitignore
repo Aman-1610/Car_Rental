@@ -1,1 +1,4 @@
-/dist/
+# Ignore everything in dist...
+dist/*
+# ...EXCEPT for the specific WAR file we need for deployment
+!dist/Car_Rental.war
