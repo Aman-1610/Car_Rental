@@ -192,17 +192,19 @@
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
                 <%
-                    if (session.getAttribute("userEmail") != null) {
-                %>
-                    <li><a href="profile.jsp">Profile</a></li>
-                    <li><a href="logout">Logout</a></li>
-                <%
-                    } else {
-                %>
-                    <!--<li><a href="LoginForm.jsp" class="login-btn">Login</a></li>-->
-                <%
-                    }
-                %>
+    if (session.getAttribute("userEmail") != null) {
+%>
+    <li><a href="profile.jsp">Profile</a></li>
+    <li><a href="logout">Logout</a></li>
+<%
+    } else {
+%>
+<!--    <li><a href="LoginForm.jsp" class="login-btn">User Login</a></li>
+    <li><a href="adminLogin.jsp" class="login-btn">Admin Login</a></li>-->
+<%
+    }
+%>
+
             </ul>
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
@@ -218,6 +220,7 @@
                     if (session.getAttribute("userEmail") == null) {
                 %>
                     <a href="LoginForm.jsp" class="login-btn">Login</a>
+                    <a href="adminLogin.jsp" class="login-btn">Admin Login</a>
                 <%
                     }
                 %>
